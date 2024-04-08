@@ -178,7 +178,7 @@ const computerSunkShips = []
 
 function handleClick (e) {
   if (!gameOver) {
-    if (e.target.classList.contains('taken')) {
+    if (e.target.classList.contains('taken') && !e.target.classList.contains('boom')) {
       e.target.classList.add('boom')
       infoDisplay.textContent = 'You hit a ship !'
       let classes = Array.from(e.target.classList)
@@ -245,7 +245,7 @@ function computerGo () {
 function checkScore (user, userHits, userSunkShips) {
   function checkShip (shipName, shipLength) {
     if (
-      userHits.filter(storedShipName => storedShipName === shipName).length === shipLength
+      userHits.filter(storedShipName => storedShipName === shipName).length === shipLength && !userSunkShips.includes(shipName)
     ) {
       if (user === 'player') {
         infoDisplay.textContent = `you sunk the computer's ${shipName}`
