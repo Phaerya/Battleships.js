@@ -85,13 +85,17 @@
 }
 
 .boom {
-  background-color: red;
+  background-color: red !important;
 }
 
 .miss {
-  background-color: grey;
+  background-color: grey !important;
 }
 
-.flip-button {}
-
-.start-button {}
+#computer .destroyer,
+#computer .submarine,
+#computer .cruiser,
+#computer .battleship,
+#computer .carrier {
+  background-color: pink;
+}
