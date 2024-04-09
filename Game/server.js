@@ -11,4 +11,10 @@ const io = socketio(server)
 app.use(express.static(path.join(__dirname, 'public')))
 
 // Start server
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`)) 
+
+// Handle a socket connection request from web client
+const connections = [null, null]
+io.on('connection', socket => {
+  console.log('NEW WS Connection')
+})

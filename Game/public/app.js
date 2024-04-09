@@ -5,6 +5,8 @@ const startButton = document.querySelector('#start-button')
 const infoDisplay = document.querySelector('#info')
 const turnDisplay = document.querySelector('#turn-display')
 
+const socket = io()
+
 // Option choosing
 let angle = 0
 function flip () {
